@@ -29,7 +29,7 @@ public class PaperclipUtils {
     public static Method getMainMethod(Path kernelJar, String mainClass) {
         PaperclipAgent.addToClassPath(kernelJar);
 
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get("libraries"), "*.jar")) {
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get("libs"), "*.jar")) {
             for(Path jarFile : stream)
                 PaperclipAgent.addToClassPath(jarFile);
         } catch (IOException e) {
